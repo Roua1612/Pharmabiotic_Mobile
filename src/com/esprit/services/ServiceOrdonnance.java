@@ -58,7 +58,7 @@ public class ServiceOrdonnance /*implements IService<Ordonnance>*/ {
     public boolean modifier(Ordonnance ordonnance) {
         ConnectionRequest request = new ConnectionRequest();
 
-        request.setUrl(URI + "64");
+        request.setUrl(URI +ordonnance.getId() );
         request.setHttpMethod("PUT");
 
         request.addArgument("reference", String.valueOf(ordonnance.getReference()));

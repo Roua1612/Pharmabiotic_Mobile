@@ -3,10 +3,13 @@ package com.esprit.gui;
 
 import com.codename1.components.SpanLabel;
 import com.codename1.ui.Button;
+import com.codename1.ui.Dialog;
 import com.codename1.ui.Form;
 import com.codename1.ui.Label;
 import com.codename1.ui.TextField;
+import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
+import com.codename1.ui.layouts.FlowLayout;
 import com.esprit.entities.Ordonnance;
 import com.esprit.services.ServiceOrdonnance;
 import java.util.List;
@@ -62,16 +65,43 @@ Button editButton = new Button("Modifier");
                  new ModifierOrdonnanceForm(this,ordonnance,this).show();
             });
             Button deleteButton = new Button("Supprimer");
-            deleteButton.addActionListener(evt -> {
-                // Code pour la suppression de la livraison
-                boolean success = serviceLivraison.supprimer(ordonnance);
-                if (success) {
-                    removeComponent(spanLabel);
-                    removeComponent(deleteButton);
-                    removeComponent(editButton);
-                    revalidate();
-                }
-            });
+deleteButton.addActionListener(evt -> {
+    // Code pour la suppression de la livraison
+    
+    // Create a confirmation dialog
+    Dialog dialog = new Dialog("Confirmation");
+    dialog.setLayout(new BorderLayout());
+
+    // Add a message to the dialog
+    dialog.add(BorderLayout.CENTER, new Label("Are you sure you want to delete?"));
+
+    // Add buttons for confirmation
+    Button yesButton = new Button("Yes");
+    Button noButton = new Button("No");
+
+    // When Yes button is pressed, perform the deletion
+    yesButton.addActionListener(e -> {
+        boolean success = serviceLivraison.supprimer(ordonnance);
+        if (success) {
+            removeComponent(spanLabel);
+            removeComponent(deleteButton);
+            removeComponent(editButton);
+            revalidate();
+        }
+
+        dialog.dispose(); // Close the dialog after deletion
+    });
+
+    // When No button is pressed, simply close the dialog
+    noButton.addActionListener(e -> dialog.dispose());
+
+    // Add buttons to the dialog
+    dialog.add(BorderLayout.SOUTH, FlowLayout.encloseRight(yesButton, noButton));
+
+    // Show the confirmation dialog
+    dialog.showPacked(BorderLayout.CENTER, true);
+});
+
             
             
             add(spanLabel);

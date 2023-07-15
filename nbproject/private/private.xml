@@ -4,7 +4,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/shai/dev/CodenameOne/NBPlugin/Mobile_Pharmabiotic/build.xml</file>
+            <file>file:/C:/Users/pc/Documents/NetBeansProjects/Mobile_Pharmabiotic/src/com/esprit/gui/AjouterForm.java</file>
+            <file>file:/C:/Users/pc/Documents/NetBeansProjects/Mobile_Pharmabiotic/src/com/esprit/gui/ModifierOrdonnanceForm.java</file>
+            <file>file:/C:/Users/pc/Documents/NetBeansProjects/Mobile_Pharmabiotic/src/com/esprit/gui/Afficher.java</file>
+            <file>file:/C:/Users/pc/Documents/NetBeansProjects/Mobile_Pharmabiotic/src/com/esprit/services/ServiceOrdonnance.java</file>
+            <file>file:/C:/Users/pc/Documents/NetBeansProjects/Mobile_Pharmabiotic/src/com/esprit/entities/Ordonnance.java</file>
+            <file>file:/C:/Users/pc/Documents/NetBeansProjects/Mobile_Pharmabiotic/src/com/esprit/gui/Home.java</file>
         </group>
     </open-files>
 </project-private>
