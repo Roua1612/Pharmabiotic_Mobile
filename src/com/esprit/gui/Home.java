@@ -25,9 +25,9 @@ public class Home extends Form{
     }
     
     private void addActions() {
-        /*btnAdd.addActionListener((evt) -> {
-            new Ajouter(this).show();
-        });*/
+        btnAdd.addActionListener((evt) -> {
+            new AjouterForm(this).show();
+        });
         btnShow.addActionListener((evt) -> {
             new Afficher(this).show();
         });
